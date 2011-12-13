@@ -1,0 +1,34 @@
+h1. Script to simplify submitting a ZooKeeper review via git
+
+*Author: "Patrick Hunt":http://people.apache.org/~phunt/* (follow me on "twitter":http://twitter.com/phunt)
+
+h2. Summary
+
+"This project":http://github.com/phunt/apache-reviewboard-zk-git simplifies submitting ZooKeeper code reviews to reviews.apache.org
+
+You need rbtools for this to work. If you're on ubuntu it's as easy as:
+
+$ sudo apt-get install python-rbtools
+
+Otherwise follow the instructions here: https://github.com/reviewboard/rbtools/blob/master/INSTALL (Apache is currently on 1.5.5 of RB which seems to require version 0.2 of rbtools - otw the login fails for me)
+
+h3. What's Apache ZooKeeper?
+
+From the "official site":http://hadoop.apache.org/zookeeper/: "ZooKeeper is a high-performance coordination service for distributed applications."
+
+It exposes common services - such as naming, configuration management, synchronization, and group services - in a simple interface so you don't have to write them from scratch. You can use it off-the-shelf to implement consensus, group management, leader election, and presence protocols. And you can build on it for your own, specific needs. 
+
+h2. License
+
+This project is licensed under the Apache License Version 2.0
+
+h2. Usage
+
+<pre>
+Usage: zpost-review.sh rev-list JIRA# ...
+</pre>
+
+example of typical use:
+
+bq. zpost-review.sh HEAD^..HEAD 1322
+
